@@ -1,0 +1,145 @@
+::-webkit-scrollbar {
+    width: 0px;
+    /* display: none; */
+}
+/* 
+::-webkit-scrollbar {
+  width: 0 !important;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+} */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #222;
+    color: #FFF;
+    line-height: 20px;
+    letter-spacing: 2.05px;
+}
+
+h1 {
+    padding: 10px 0;
+}
+
+h1 a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.8rem
+}
+
+.hidden {
+    display: none;
+}
+
+#filter {
+    text-align: center;
+    background-color: #333;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+#filter button {
+    border: 0;
+    background-color: #333;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #FFF;
+    cursor: pointer;
+    padding: 5px 15px;
+    margin: 5px 0;
+}
+
+#filter button.active {
+    background-color: #406174;
+    border-radius: 3px;
+}
+
+#filter button:focus {
+    outline: 0;
+}
+
+#posts .post img {
+    transform: translate3d(0, 0, 0) scale(1);
+    transition: .35s ease-in-out;
+}
+
+#posts .post:hover img {
+    opacity: 0.3;
+    transform: translate3d(0, 0, 0) scale(1.4);
+    transition: .35s ease-in-out;
+}
+
+.post {
+    overflow: hidden;
+}
+
+.post p {
+    position: absolute;
+    z-index: -1000;
+    width: 80%;
+    transition: .30s ease-in-out;
+    opacity: 0;
+    margin: 2rem 0 0 2rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: #fff;
+    /*padding-right: 2rem;*/
+}
+
+.post:hover p {
+    width: 80%;
+    position: absolute;
+    z-index: 1000;
+    transition: .30s ease-in-out;
+    opacity: 1;
+    margin: 2rem 0 0 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    /*padding-right: 2rem;*/
+}
+
+.port {
+    letter-spacing: 3px;
+}
+
+.htmlcssjs-span,
+.wordpress-span,
+.all-span,
+.skills-span,
+.pureJsSpan,
+.reactSpan {
+    display: inline-block;
+    min-width: 22px;
+    line-height: 20px;
+    font-weight: bolder;
+    font-size: 17px;
+    border-radius: 20px;
+    vertical-align: 10px;
+    background: #eee;
+    color: tomato;
+    padding: 1px 3px 1px 3px;
+}
+
+.post {
+    float: left !important;
+    outline: 2px solid #222;
+    padding-right: 5px;
+}
+
+@media (min-width: 200px) {
+    .col-sm-3 {
+        -ms-flex: 0 0 49.9% !important;
+        flex: 0 0 49.9% !important;
+        max-width: 49.9% !important;
+    }
+}
+
+@media (min-width: 720px) {
+    .col-sm-3 {
+        -ms-flex: 0 0 33.3% !important;
+        flex: 0 0 33.3% !important;
+        max-width: 33.3% !important;
+    }
+}
