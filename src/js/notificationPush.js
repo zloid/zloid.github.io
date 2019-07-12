@@ -1,17 +1,35 @@
 'use strict'
 
-$(document).ready(function() {
-  let n = $('.htmlcssjs').length - 1
-  $('.htmlcssjs-span').text(n)
+const notificationPush = {
+  projectsCounter(nodeList) {
+    return document.querySelectorAll(nodeList).length - 1
+  },
+  pushTo(child, parent) {
+    document.querySelector(parent).innerHTML = child
+  },
+  allProjects(...theArgs) {
+    let arrAfterMap = theArgs.map(element => this.projectsCounter(element))
+    return arrAfterMap.reduce((accum, current) => accum + current)
+  },
+}
 
-  let n2 = $('.wordpress').length - 1
-  $('.wordpress-span').text(n2)
-
-  let n4 = $('.pureJs').length - 1
-  $('.pureJsSpan').text(n4)
-
-  let n5 = $('.react').length - 1
-  $('.reactSpan').text(n5)
-
-  $('.all-span').text(n + n2 + n4 + n5)
-})
+notificationPush.pushTo(
+  notificationPush.projectsCounter('.htmlcssjs'),
+  '.htmlcssjs-span'
+)
+notificationPush.pushTo(
+  notificationPush.projectsCounter('.wordpress'),
+  '.wordpress-span'
+)
+notificationPush.pushTo(
+  notificationPush.projectsCounter('.pureJs'),
+  '.pureJsSpan'
+)
+notificationPush.pushTo(
+  notificationPush.projectsCounter('.react'),
+  '.reactSpan'
+)
+notificationPush.pushTo(
+  notificationPush.allProjects('.htmlcssjs', '.wordpress', '.pureJs', '.react'),
+  '.all-span'
+)
