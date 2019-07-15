@@ -1,18 +1,17 @@
-<!-- based on https://www.jqueryscript.net/layout/Filterable-Portfolio-Wall-with-jQuery-CSS3.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <title></title>
+  <title>Sergey Voytehovich's portfolio</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./src/css/styles.css">
 
-  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-  
+  <!-- <script src="https://code.jquery.com/jquery-latest.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
 </head>
 
 <body>
@@ -36,49 +35,49 @@
         <!--htmlcssjs 1-->
         <div class="post htmlcssjs col-sm-3 p-0">
           <a target="_blank" href="http://fast-search.zloid.ru/">
-            <p>has made: bootstrap page from PSD layout</p>
+            <p>bootstrap page from PSD layout</p>
             <img class="img-fluid" src="images/fast-search-min.jpg" alt="image">
           </a>
         </div>
         <!--htmlcssjs 2-->
         <div class="post htmlcssjs col-sm-3 p-0">
           <a target="_blank" href="http://zoo10.zloid.ru/fun-me-playlist.php">
-            <p>has made: bootstrap based site</p>
+            <p>bootstrap based site</p>
             <img class="img-fluid" src="images/zoo-10.jpg" alt="image">
           </a>
         </div>
         <!--htmlcssjs 3-->
         <div class="post htmlcssjs col-sm-3 p-0">
           <a target="_blank" href="http://corporate-blue.zloid.ru/">
-            <p>has made: HTML + CSS from PSD layout</p>
+            <p>HTML + CSS from PSD layout</p>
             <img class="img-fluid" src="images/corporate-blue-2.jpg" alt="image">
           </a>
         </div>
-        <!--
+        <!--htmlcssjs 4-->
         <div class="post htmlcssjs col-sm-3 p-0">
           <a target="_blank" href="http://deals-site.zloid.ru/">
-            <p>has made: HTML + CSS from PSD layout</p>
+            <p>HTML + CSS from PSD layout</p>
             <img class="img-fluid" src="images/deals-fest-site-4.jpg" alt="image">
           </a>
-        </div>-->
+        </div> 
         <!--wordpress 1-->
         <div class="post wordpress col-sm-3 p-0">
           <a target="_blank" href="http://stroika-1.ru/oremonte/vetryak-dlya-chastnogo-doma.html">
-            <p>has made: install on server, configured plugins and ads, posted articles. Traffic: 200 per day</p>
+            <p>install on server, configured plugins and ads, posted articles. Traffic: 250 per day</p>
             <img class="img-fluid" src="images/stroika-1-ru-3.jpg" alt="image">
           </a>
         </div>
         <!--pureJs 1-->
         <div class="post pureJs col-sm-3 p-0">
           <a target="_blank" href="http://calc.zloid.ru/">
-            <p>has made: math calculator on pure JS</p>
+            <p>math calculator on pure JS</p>
             <img class="img-fluid" src="images/pureJsCalc-2.jpg" alt="image">
           </a>
         </div>
         <!--pureJs 2-->
         <div class="post pureJs col-sm-3 p-0">
           <a target="_blank" href="http://player.zloid.ru/">
-            <p>has made: Audio player on pure JS</p>
+            <p>Audio player on pure JS</p>
             <img class="img-fluid" src="images/player-zloid-ru-6.jpg" alt="image">
           </a>
         </div>
@@ -102,41 +101,9 @@
     <div class="hidden"></div>
   </div><!-- <div class="container"> -->
 
-  <!-- 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
--->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
-
-  <script>
-    function resizeAudioProgressCover() {
-      let widthPostNum = document.querySelector('.post').offsetWidth;
-      let postAllObj = document.querySelectorAll('.post');
-
-      let imgAllObg = document.querySelectorAll('.img-fluid');
-
-
-
-      for (let i = 0; i < postAllObj.length; i++) {
-        postAllObj[i].style.height = widthPostNum + 'px';
-      }
-      for (let i = 0; i < imgAllObg.length; i++) {
-        imgAllObg[i].style.height = widthPostNum + 'px';
-      }
-    }
-    window.onload = resizeAudioProgressCover();
-    window.addEventListener('resize', () => {
-      resizeAudioProgressCover();
-    })
-  </script>
-
-<script src="./src/js/menuActions.js"></script>
-<script src="./src/js/notificationPush.js"></script>
+  <script src="./src/js/resizeThumbnailsAdaptively.js"></script>
+  <script src="./src/js/menuActions.js"></script>
+  <script src="./src/js/notificationPush.js"></script>
 </body>
 
 </html>

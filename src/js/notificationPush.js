@@ -1,35 +1,31 @@
 'use strict'
 
 const notificationPush = {
-  projectsCounter(nodeList) {
+  countCommonProjects(nodeList) {
     return document.querySelectorAll(nodeList).length - 1
   },
-  pushTo(child, parent) {
+  insertChildToParent(child, parent) {
     document.querySelector(parent).innerHTML = child
   },
-  allProjects(...theArgs) {
-    let arrAfterMap = theArgs.map(element => this.projectsCounter(element))
+  countAllProjects(...theArgs) {
+    let arrAfterMap = theArgs.map(element => this.countCommonProjects(element))
     return arrAfterMap.reduce((accum, current) => accum + current)
   },
 }
 
-notificationPush.pushTo(
-  notificationPush.projectsCounter('.htmlcssjs'),
-  '.htmlcssjs-span'
-)
-notificationPush.pushTo(
-  notificationPush.projectsCounter('.wordpress'),
-  '.wordpress-span'
-)
-notificationPush.pushTo(
-  notificationPush.projectsCounter('.pureJs'),
-  '.pureJsSpan'
-)
-notificationPush.pushTo(
-  notificationPush.projectsCounter('.react'),
-  '.reactSpan'
-)
-notificationPush.pushTo(
-  notificationPush.allProjects('.htmlcssjs', '.wordpress', '.pureJs', '.react'),
+const { countCommonProjects, insertChildToParent } = notificationPush
+
+insertChildToParent(countCommonProjects('.htmlcssjs'), '.htmlcssjs-span')
+insertChildToParent(countCommonProjects('.wordpress'), '.wordpress-span')
+insertChildToParent(countCommonProjects('.pureJs'), '.pureJsSpan')
+insertChildToParent(countCommonProjects('.react'), '.reactSpan')
+insertChildToParent(
+  notificationPush.countAllProjects(
+    '.htmlcssjs',
+    '.wordpress',
+    '.pureJs',
+    '.react'
+  ),
   '.all-span'
 )
+
