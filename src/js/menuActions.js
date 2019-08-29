@@ -1,36 +1,58 @@
 'use strict'
-  $(document).ready(function() {
-    $('.hidden').css('display', 'none')
 
-    $('#filter button').each(function() {
-      $(this).on('click', function() {
-        let filter = $(this).attr('class')
+function menuActionsViaImgs() {
+  let hidden = document.querySelector('.hidden')
+  hidden.style.display = 'none'
 
-        if ($(this).attr('class') == 'all') {
-          $('.hidden')
-            .contents()
-            .appendTo('#posts')
-            .hide()
-            .show('slow')
-          $('#filter button').removeClass('active')
-          $(this).addClass('active')
-          $('#filter button').attr('disabled', false)
-          $(this).attr('disabled', true)
-        } else {
-          $('.post').appendTo('.hidden')
-          $('.hidden')
-            .contents()
-            .appendTo('#posts')
-            .hide()
-            .show('slow')
-          $('.post:not(.' + filter + ')')
-            .appendTo('.hidden')
-            .hide('slow')
-          $('#filter button').removeClass('active')
-          $(this).addClass('active')
-          $('#filter button').attr('disabled', false)
-          $(this).attr('disabled', true)
-        }
-      })
+  let allButtons = document.querySelectorAll('#filter > button')
+  //todo
+  ////////////TODO/////////////
+  allButtons.forEach(e => {
+    e.addEventListener('click', () => {
+      let filter = e.className
+
+      if (filter === 'lall') {
+        ////////////////////////++++
+        $('.hidden')
+          .contents()
+          .appendTo('#posts')
+          .hide()
+          .show('slow')
+        ////////////////////////
+      } else {
+        ////////////////////////++++
+
+        $('.post').appendTo('.hidden')
+
+        $('.hidden')
+          .contents()
+          .appendTo('#posts')
+          .hide()
+          .show('slow')
+
+        $('.post:not(.' + filter + ')')
+          .appendTo('.hidden')
+          .hide('slow')
+        ////////////////////////
+      }
     })
   })
+}
+
+function menuToggleActive() {
+  let allButtons = document.querySelectorAll('#filter > button')
+
+  allButtons.forEach(e => {
+    e.addEventListener('click', () => {
+      allButtons.forEach(e => {
+        e.classList.remove('active')
+        e.removeAttribute('disabled')
+      })
+
+      e.setAttribute('disabled', 'disabled')
+      e.classList.add('active')
+    })
+  })
+}
+
+;(window.onload = menuActionsViaImgs()), menuToggleActive()
