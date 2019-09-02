@@ -96,16 +96,31 @@
             <img class="img-fluid" src="images/react-calc.jpg" alt="image">
           </a>
         </div>
- 
+
 
       </div><!-- <div class="row"> -->
     </div><!-- <div id="posts"> -->
-      <!-- <div id="posts2" style="border: 5px solid gold">posts2</div> -->
+    <!-- <div id="posts2" style="border: 5px solid gold">posts2</div> -->
 
     <div class="hidden"></div>
 
   </div><!-- <div class="container"> -->
 
+  <script>
+    let allPosts = document.querySelectorAll('.post')
+
+    function animationForDiv(nodeList, speed = 0.5) {
+      nodeList.forEach(e => {
+        e.style.transform = 'scale(.3,.3)'
+        setTimeout(() => {
+          e.style.transition = `${speed}s ease-in-out`
+          e.style.transform = 'scale(1,1)'
+        }, 1)
+      })
+    }
+
+   animationForDiv(allPosts, .6)
+  </script>
 
   <script src="./src/js/resizeThumbnailsAdaptively.js"></script>
   <script src="./src/js/menuActions.js"></script>
