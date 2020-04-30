@@ -1,1 +1,3 @@
-# portfolio-page v0.1.50
+# Own portfolio page
+
+## Based on HTML + CSS + JS
