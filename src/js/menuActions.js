@@ -45,7 +45,7 @@ function menuActionsViaImgs() {
           postsDiv.appendChild(e)
         })
 
-        animationForDiv(allPosts, 0.65)
+        animationForDiv(allPosts, 0.5)
       }
     })
   })

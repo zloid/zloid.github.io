@@ -1,8 +1,8 @@
 {
   "name": "zloid.github.io",
-  "version": "1.0.1",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.2",
+  "description": "own portfolio",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/zloid/zloid.github.io.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "zloid",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zloid/zloid.github.io/issues"
