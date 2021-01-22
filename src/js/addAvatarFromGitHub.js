@@ -8,17 +8,22 @@
  * @param {string} id - DOM element id
  * @return {void}
  */
-function addAvatarFromGitHub(url, id) {
+async function addAvatarFromGitHub(url, id) {
   const avatarFromGitHubField = document.getElementById(id)
   const avatarImg = new Image(50, 50)
   avatarImg.style.borderRadius = '50px'
+  avatarImg.src = 'images/beard-avatar.jpg'
+  avatarFromGitHubField.appendChild(avatarImg)
 
-  fetch(url)
-    .then((response) => response.json())
-    .then(({ avatar_url }) => {
-      avatarImg.src = avatar_url
-      avatarFromGitHubField.appendChild(avatarImg)
-    })
+  try {
+    const response = await fetch(url)
+    const githubApiObj = await response.json()
+
+    avatarImg.src = githubApiObj.avatar_url
+    avatarFromGitHubField.appendChild(avatarImg)
+  } catch (error) {
+    console.log('avatar_url: ' + error)
+  }
 }
 
 addAvatarFromGitHub(
