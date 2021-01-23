@@ -9,18 +9,14 @@
  * @return {void}
  */
 async function addAvatarFromGitHub(url, id) {
-  const avatarFromGitHubField = document.getElementById(id)
-  const avatarImg = new Image(50, 50)
-  avatarImg.style.borderRadius = '50px'
-  avatarImg.src = 'images/beard-avatar.jpg'
-  avatarFromGitHubField.appendChild(avatarImg)
-
   try {
+    const avatarFromGitHubField = document.getElementById(id)
     const response = await fetch(url)
     const githubApiObj = await response.json()
 
-    avatarImg.src = githubApiObj.avatar_url
-    avatarFromGitHubField.appendChild(avatarImg)
+    avatarFromGitHubField.addEventListener('mouseover', () => {
+      avatarFromGitHubField.src = githubApiObj.avatar_url
+    })
   } catch (error) {
     console.log('avatar_url: ' + error)
   }
