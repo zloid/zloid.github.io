@@ -17,13 +17,13 @@ const { countCommonProjects, insertChildToParent } = notificationPush
 
 insertChildToParent(countCommonProjects('.htmlcssjs'), '.htmlcssjs-span')
 insertChildToParent(countCommonProjects('.wordpress'), '.wordpress-span')
-insertChildToParent(countCommonProjects('.pureJs'), '.pureJsSpan')
+// insertChildToParent(countCommonProjects('.pureJs'), '.pureJsSpan')
 insertChildToParent(countCommonProjects('.react'), '.reactSpan')
 insertChildToParent(
   notificationPush.countAllProjects(
     '.htmlcssjs',
     '.wordpress',
-    '.pureJs',
+    // '.pureJs',
     '.react'
   ),
   '.all-span'
