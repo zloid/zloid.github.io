@@ -1,6 +1,6 @@
 {
   "name": "zloid.github.io",
-  "version": "1.1.9",
+  "version": "1.1.11",
   "description": "own portfolio",
   "main": "index.html",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "keywords": [],
   "author": "zloid",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/zloid/zloid.github.io/issues"
   },
