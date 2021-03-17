@@ -17,12 +17,14 @@ const { countCommonProjects, insertChildToParent } = notificationPush
 
 insertChildToParent(countCommonProjects('.htmlcssjs'), '.htmlcssjs-span')
 insertChildToParent(countCommonProjects('.wordpress'), '.wordpress-span')
+insertChildToParent(countCommonProjects('.opencart'), '.opencart-span')
 // insertChildToParent(countCommonProjects('.pureJs'), '.pureJsSpan')
 insertChildToParent(countCommonProjects('.react'), '.reactSpan')
 insertChildToParent(
   notificationPush.countAllProjects(
     '.htmlcssjs',
     '.wordpress',
+    '.opencart',
     // '.pureJs',
     '.react'
   ),
